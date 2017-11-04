@@ -1,0 +1,20 @@
+{
+  "name": "social-project",
+  "version": "1.0.0",
+  "description": "Social Project for Product Hunt Hackathon",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joselsalazar/social-project.git"
+  },
+  "author": "Jose, Mary, Sal, Taya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joselsalazar/social-project/issues"
+  },
+  "homepage": "https://github.com/joselsalazar/social-project#readme"
+}
