@@ -23,9 +23,9 @@ app.use(express.static("public"));
 // MongoDB Connections
 // =================================
 // Local Host Connection
-mongoose.connect("mongodb://localhost/social-project", {
-    useMongoClient: true
-  });
+// mongoose.connect("mongodb://localhost/social-project", {
+    // useMongoClient: true
+  // });
 
 
 // Remote Host Connection (Goes Below)
