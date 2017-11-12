@@ -2,7 +2,6 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var logger = require("morgan");
-var mongoose = require("mongoose");
 
 // Express
 // =================================
@@ -20,26 +19,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(express.static("public"));
 // ===================================
 
-// MongoDB Connections
-// =================================
-// Local Host Connection
-// mongoose.connect("mongodb://localhost/social-project", {
-    // useMongoClient: true
-  // });
-
-
 // Remote Host Connection (Goes Below)
-
-
-var db = mongoose.connection;
-
-db.on("error", function(err) {
-  console.log("Mongoose Error: ", err);
-});
-
-db.once("open", function() {
-  console.log("Mongoose connection successful.");
-});
 
 // ===================================
 
