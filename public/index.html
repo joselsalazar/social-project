@@ -21,7 +21,6 @@
     <link href="css/landing-page.css" rel="stylesheet">
   </head>
   <body>
-
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="container">
@@ -33,7 +32,7 @@
     </nav>
 
     <!-- Header -->
-    <header class="intro-header">
+    <header class="intro-header" id="intro-header">
       <div class="container">
         <div class="intro-message">
           <h1>Lunchbox</h1>
@@ -41,22 +40,7 @@
           <hr class="intro-divider">
           <ul class="list-inline intro-social-buttons">
             <li class="list-inline-item">
-              <a href="#" class="btn btn-secondary btn-lg">
-                <i class="fa fa-twitter fa-fw"></i>
-                <span class="network-name">Twitter</span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#" class="btn btn-secondary btn-lg">
-                <i class="fa fa-github fa-fw"></i>
-                <span class="network-name">Github</span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#" class="btn btn-secondary btn-lg">
-                <i class="fa fa-linkedin fa-fw"></i>
-                <span class="network-name">Linkedin</span>
-              </a>
+              <button type="button" class="btn btn-primary" onclick="launchPlacesUsingGeolocation()">Places Near Me</button>
             </li>
           </ul>
         </div>
@@ -65,10 +49,10 @@
 
     <!-- Page Content -->
 
+    <div id="map" style="display: none;"></div>
+
     <aside class="banner">
-
       <div class="container">
-
         <div class="row">
           <div class="col-lg-6 my-auto">
             <h2>Connect to Start Bootstrap:</h2>
@@ -123,7 +107,7 @@
             <a href="#contact">Contact</a>
           </li>
         </ul>
-        <p class="copyright text-muted small">Copyright &copy; Your Company 2017. All Rights Reserved</p>
+        <p class="copyright text-muted small">Copyright &copy; Panda Posse 2017. All Rights Reserved</p>
       </div>
     </footer>
 
@@ -132,6 +116,7 @@
     <script src="vendor/popper/popper.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKr99N_erO1oZAi3Gzzg0_OLzzEXAS63w&libraries=places"></script>
+    <script type="text/javascript" src="js/google-places.js"></script>
   </body>
 
 </html>

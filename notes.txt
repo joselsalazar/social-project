@@ -1,0 +1,12 @@
+i'm following this tutorial:
+https://developers.google.com/maps/documentation/javascript/examples/place-search
+
+this is the places library:
+https://developers.google.com/maps/documentation/javascript/places#place_search_requests
+
+i started a lunchbox project with my sal.salazar1 account:
+
+https://console.developers.google.com/apis/dashboard?pli=1&project=lunchbox-1510453324240&duration=PT1H
+
+working with bootstrap 4b
+http://getbootstrap.com/docs/4.0/getting-started/introduction/
