@@ -22,30 +22,34 @@ function initMap() {
   }, callback);
 }
 
+var map, infoWindow, pos;
 function launchPlacesUsingGeolocation() {
   // Note: This requires that you consent to location sharing when
   // prompted by your browser. If you see the error "The Geolocation service
   // failed.", it means you probably did not give permission for the browser to
   // locate you (default Phoenix Arizona coordinates)
-  var map, infoWindow;
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 33.4484, lng: 112.0740},
-    zoom: 15
+    zoom: 18
   });
   infoWindow = new google.maps.InfoWindow;
 
   // HTML5 geolocation.
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
+      pos = {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
 
-      infoWindow.setPosition(pos);
-      infoWindow.setContent('Location found.');
-      infoWindow.open(map);
       map.setCenter(pos);
+      var service = new google.maps.places.PlacesService(map);
+      service.nearbySearch({
+        location: pos,
+        radius: 500,
+        // type: ['store']
+      }, callback);
+
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
     });
