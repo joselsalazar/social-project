@@ -29,7 +29,7 @@ function launchPlacesUsingGeolocation() {
   // failed.", it means you probably did not give permission for the browser to
   // locate you (default Phoenix Arizona coordinates)
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 33.4484, lng: 112.0740},
+    center: {lat: 33.4484, lng: -112.0740},
     zoom: 18
   });
   infoWindow = new google.maps.InfoWindow;
