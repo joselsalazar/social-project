@@ -34,6 +34,8 @@ function launchPlacesUsingGeolocation() {
   });
   infoWindow = new google.maps.InfoWindow;
 
+  // TODO continue here, grab all checkboxes that are checked here
+
   // HTML5 geolocation.
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
