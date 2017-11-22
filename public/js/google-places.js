@@ -1,7 +1,9 @@
-// This example requires the Places library. Include the libraries=places
-// parameter when you first load the API. For example:
-// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-
+/**
+ * This example requires the Places library. Include the libraries=places
+ * parameter when you first load the API. For example: <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+ * 
+ * All supporting types can be found here: https://developers.google.com/places/supported_types
+ */
 var map;
 var infowindow;
 
@@ -18,7 +20,7 @@ function initMap() {
   service.nearbySearch({
     location: pyrmont,
     radius: 500,
-    type: ['store']
+    type: ['airport']
   }, callback);
 }
 
@@ -34,10 +36,18 @@ function launchPlacesUsingGeolocation() {
   });
   infoWindow = new google.maps.InfoWindow;
 
-  // TODO continue here, grab all checkboxes that are checked here
+  var selected_types = [];
+  $(".map-type").each(function(index) {
+    if ( this.checked )
+    {
+      selected_types.push(this.value);
+    }
+  });
 
   // HTML5 geolocation.
   if (navigator.geolocation) {
+    console.log('launching nearbySearch: ' + selected_types);
+
     navigator.geolocation.getCurrentPosition(function(position) {
       pos = {
         lat: position.coords.latitude,
@@ -46,10 +56,11 @@ function launchPlacesUsingGeolocation() {
 
       map.setCenter(pos);
       var service = new google.maps.places.PlacesService(map);
+
       service.nearbySearch({
         location: pos,
         radius: 500,
-        // type: ['store']
+        type: 'airport',
       }, callback);
 
     }, function() {
