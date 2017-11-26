@@ -4,26 +4,6 @@
  * 
  * All supporting types can be found here: https://developers.google.com/places/supported_types
  */
-var map;
-var infowindow;
-
-function initMap() {
-  var pyrmont = {lat: -33.867, lng: 151.195};
-
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: pyrmont,
-    zoom: 15
-  });
-
-  infowindow = new google.maps.InfoWindow();
-  var service = new google.maps.places.PlacesService(map);
-  service.nearbySearch({
-    location: pyrmont,
-    radius: 500,
-    type: ['airport']
-  }, callback);
-}
-
 var map, infoWindow, pos;
 function launchPlacesUsingGeolocation() {
   // Note: This requires that you consent to location sharing when
@@ -60,7 +40,7 @@ function launchPlacesUsingGeolocation() {
       service.nearbySearch({
         location: pos,
         radius: 500,
-        type: 'airport',
+        type: selected_types,
       }, callback);
 
     }, function() {
